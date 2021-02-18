@@ -60,9 +60,9 @@ class DemoBox(BoxLayout):
 
     def on_touch_down(self, touch):
         if self.collide_point(*touch.pos):
-                print("I touched it")
-                # The touch has occurred inside the widgets area. Do stuff!
-                pass   
+            print("I touched it")
+            # The touch has occurred inside the widgets area. Do stuff!
+            pass   
 
 class DemoApp(App):
     def build(self):
