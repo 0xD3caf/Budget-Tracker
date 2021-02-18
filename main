@@ -44,7 +44,7 @@ class DemoBox(BoxLayout):
         # reuse functions.
         btn5 = Button(text="Using partial functions. For hardcores.")
         btn5.bind(on_press=partial(self.on_anything, "1", "2", monthy="python"))
-
+        
         for but in [btn, btn2, btn3, btn4, btn5]:
             self.add_widget(but)
 
@@ -62,8 +62,7 @@ class DemoBox(BoxLayout):
         if self.collide_point(*touch.pos):
             print("I touched it")
             # The touch has occurred inside the widgets area. Do stuff!
-            pass   
-
+            pass
 class DemoApp(App):
     def build(self):
         return DemoBox()
