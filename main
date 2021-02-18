@@ -58,11 +58,11 @@ class DemoBox(BoxLayout):
         print('The flexible function has *args of', str(args),
             "and **kwargs of", str(kwargs))
 
- def on_touch_down(self, touch):
-    if self.collide_point(*touch.pos):
-        print("I touched it")
-        # The touch has occurred inside the widgets area. Do stuff!
-        pass   
+    def on_touch_down(self, touch):
+        if self.collide_point(*touch.pos):
+            print("I touched it")
+            # The touch has occurred inside the widgets area. Do stuff!
+            pass   
 
 class DemoApp(App):
     def build(self):
