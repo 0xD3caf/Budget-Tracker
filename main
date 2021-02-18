@@ -18,7 +18,7 @@ class DemoBox(BoxLayout):
         # passed to the callback is the object which we have bound to.
         btn = Button(text="Normal binding to event")
         btn.bind(on_press=self.on_event)
-        btn.bind(on_touch=self.on_event)
+        btn.bind(on_touch=self.on_touch_down)
 
         # Next, we bind to a standard property change event. This typically
         # passes 2 arguments: the object and the value
@@ -58,6 +58,11 @@ class DemoBox(BoxLayout):
         print('The flexible function has *args of', str(args),
             "and **kwargs of", str(kwargs))
 
+ def on_touch_down(self, touch):
+    if self.collide_point(*touch.pos):
+        print("I touched it")
+        # The touch has occurred inside the widgets area. Do stuff!
+        pass   
 
 class DemoApp(App):
     def build(self):
